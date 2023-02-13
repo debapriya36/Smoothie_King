@@ -1,6 +1,7 @@
 const User=require('../models/User');
 const jwt=require('jsonwebtoken');
-const {JWT_SECTRET_KEY}=require('../keys');
+// const {JWT_SECTRET_KEY}=require('../keys');
+const JWT_SECTRET_KEY=process.env.JWT_SECTRET_KEY;
 
 const maxAge=3*24*60*60;
 
@@ -16,8 +17,8 @@ const handleErrors = (err)=>{
   if (err.message === 'incorrect password') {
     errors.password = 'That password is incorrect';
   }
-
-
+ 
+  // duplicate email error code=11000
     if(err.code==11000)
     {
       errors.email='email already exists';

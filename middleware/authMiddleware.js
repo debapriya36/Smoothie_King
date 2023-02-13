@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-const { JWT_SECTRET_KEY } = require('../keys');
+// const { JWT_SECTRET_KEY } = require('../keys');
+const JWT_SECTRET_KEY=process.env.JWT_SECTRET_KEY;
 const User = require('../models/User');
 
 
